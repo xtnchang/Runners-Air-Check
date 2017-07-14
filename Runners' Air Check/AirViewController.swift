@@ -8,14 +8,32 @@
 
 import UIKit
 
-class AirViewController: UIViewController {
+class AirViewController: UIViewController, UISearchBarDelegate {
+
+    @IBOutlet weak var searchBar: UISearchBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+  
+        searchBar.delegate = self
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
-        AirQualClient.sharedInstance.getCityAirQuality(cityName: "london") { (airQuality, error) in
+        print(searchBar.text)
+        
+        let inputString = searchBar.text?.removeWhitespace()
+        
+        print(inputString)
+        
+        AirQualClient.sharedInstance.getCityAirQuality(cityName: inputString!) { (airQuality, error) in
             
             if airQuality != nil {
                 
@@ -40,22 +58,19 @@ class AirViewController: UIViewController {
                 print("Sorry, there is currently no data for this city.")
             }
         }
+        
+        searchBar.text = ""
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+extension String {
+    
+    func replace(string:String, replacement:String) -> String {
+        return self.replacingOccurrences(of: string, with: replacement, options: NSString.CompareOptions.literal, range: nil)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func removeWhitespace() -> String {
+        return self.replace(string: " ", replacement: "")
     }
-    */
-
 }

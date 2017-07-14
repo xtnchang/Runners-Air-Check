@@ -14,7 +14,7 @@ extension AirQualClient {
         
         let parameter = cityName
         
-        // Sample URL: https://api.waqi.info/search/?token=42507480451ec3dbed7ad60e6cf0528daba22dda&keyword=sanfrancisco
+        // Sample URL: https://api.waqi.info/search/?token=42507480451ec3dbed7ad60e6cf0528daba22dda&keyword=losangeles
         
         taskForGETMethod(parameter: parameter) { (deserializedData, error) in
             
