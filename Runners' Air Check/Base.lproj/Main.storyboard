@@ -23,6 +23,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
@@ -59,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="537" width="303" height="120"/>
+                                <rect key="frame" x="36" y="267" width="303" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="K71-of-xQY" userLabel="height = 120"/>
                                 </constraints>
@@ -73,13 +81,13 @@
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="20" id="Ih1-OR-YIY"/>
-                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Jtr-fn-xS6"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="aNr-eR-rDr" secondAttribute="centerY" id="dlT-nK-3of"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aXM-IZ-UdX" secondAttribute="bottom" constant="10" id="hqZ-uy-C5n"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aXM-IZ-UdX" secondAttribute="bottom" constant="280" id="hqZ-uy-C5n" userLabel="Bottom Layout Guide.top = Message Label.bottom + 280"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rPV-8g-RzR"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="sVu-Su-GlW"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="ula-Uh-xDu"/>
                             <constraint firstAttribute="trailing" secondItem="PJS-ZH-53f" secondAttribute="trailing" id="xU8-KZ-OKY"/>
                         </constraints>
                     </view>
@@ -87,9 +95,12 @@
                         <outlet property="airScoreCircle" destination="aNr-eR-rDr" id="hof-8f-bGR"/>
                         <outlet property="airScoreLabel" destination="4x9-Cf-da5" id="63n-L8-Y3b"/>
                         <outlet property="cityLabel" destination="g3y-G3-cbU" id="HZW-6Y-MFa"/>
+                        <outlet property="fullScreenView" destination="8bC-Xf-vdC" id="fEw-Xk-gHx"/>
                         <outlet property="messageLabel" destination="aXM-IZ-UdX" id="jWG-Z5-agu"/>
                         <outlet property="searchBar" destination="PJS-ZH-53f" id="05R-yv-axv"/>
                         <outlet property="searchDisplayController" destination="cFn-nZ-1iq" id="itH-OA-7Mr"/>
+                        <outlet property="trailImageView" destination="0l4-d2-lgd" id="tfp-Bg-2sr"/>
+                        <outlet property="treadmillImageView" destination="D92-1h-N6c" id="21n-cr-1Eb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -105,4 +116,8 @@
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Trail" width="225" height="400"/>
+        <image name="Treadmill" width="607" height="1079"/>
+    </resources>
 </document>
