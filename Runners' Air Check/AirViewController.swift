@@ -13,6 +13,9 @@ class AirViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var airScoreLabel: UILabel!
     @IBOutlet weak var airScoreCircle: AirScoreView!
+    @IBOutlet weak var cityLabel: UILabel!
+    
+    var cityName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,8 +23,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
   
         searchBar.delegate = self
-        self.airScoreLabel.text = "test"
-        self.airScoreCircle.color = UIColor.purple
+        self.airScoreCircle.color = UIColor.gray
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -36,6 +38,8 @@ class AirViewController: UIViewController, UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         
         print(searchBar.text ?? "")
+        
+        self.cityName = searchBar.text
         
         let inputString = searchBar.text?.removeWhitespace()
         
@@ -52,6 +56,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.airScoreCircle.color = UIColor.green
                     }
                 } else if airQuality! < 100 {
@@ -59,6 +64,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.airScoreCircle.color = UIColor.yellow
                     }
                 } else if airQuality! < 150 {

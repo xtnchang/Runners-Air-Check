@@ -24,17 +24,17 @@
                         <subviews>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="E2m-6g-dqO"/>
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-eR-rDr" customClass="AirScoreView" customModule="Runners__Air_Check" customModuleProvider="target">
-                                <rect key="frame" x="30" y="567" width="70" height="70"/>
+                                <rect key="frame" x="36" y="107" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x9-Cf-da5" userLabel="Air Score Label">
-                                        <rect key="frame" x="35" y="34.5" width="0.0" height="0.0"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="35" y="35" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -48,19 +48,32 @@
                                     <constraint firstAttribute="width" constant="70" id="kN8-Ci-CKL"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-G3-cbU">
+                                <rect key="frame" x="127" y="107" width="232" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="232" id="4D0-y4-2op" userLabel="width = 230"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="30" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
+                            <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
+                            <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="aNr-eR-rDr" secondAttribute="centerY" id="dlT-nK-3of"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rPV-8g-RzR"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="sVu-Su-GlW"/>
                             <constraint firstAttribute="trailing" secondItem="PJS-ZH-53f" secondAttribute="trailing" id="xU8-KZ-OKY"/>
-                            <constraint firstAttribute="bottom" secondItem="aNr-eR-rDr" secondAttribute="bottom" constant="30" id="xuY-2Z-Ib0" userLabel="bottom = Air Score View.bottom + 30"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="airScoreCircle" destination="aNr-eR-rDr" id="hof-8f-bGR"/>
                         <outlet property="airScoreLabel" destination="4x9-Cf-da5" id="63n-L8-Y3b"/>
+                        <outlet property="cityLabel" destination="g3y-G3-cbU" id="HZW-6Y-MFa"/>
                         <outlet property="searchBar" destination="PJS-ZH-53f" id="05R-yv-axv"/>
                         <outlet property="searchDisplayController" destination="cFn-nZ-1iq" id="itH-OA-7Mr"/>
                     </connections>
