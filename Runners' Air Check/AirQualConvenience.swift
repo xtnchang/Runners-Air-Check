@@ -44,6 +44,11 @@ extension AirQualClient {
                 return
             }
             
+            if data.isEmpty {
+                sendError(error: "There is no data for the city you entered.")
+                return
+            }
+            
             guard let dictionary = data[0] as? [String:AnyObject] else {
                 sendError(error: "The dictionary cannot be found.")
                 return

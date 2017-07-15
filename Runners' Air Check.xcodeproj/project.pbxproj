@@ -18,6 +18,7 @@
 		38253E121F183A5D00E7B643 /* AirQualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E111F183A5D00E7B643 /* AirQualConstants.swift */; };
 		38253E141F183A6E00E7B643 /* AirQualClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E131F183A6E00E7B643 /* AirQualClient.swift */; };
 		38253E161F183A7C00E7B643 /* AirQualConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E151F183A7C00E7B643 /* AirQualConvenience.swift */; };
+		38253E181F192D6E00E7B643 /* AirScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E171F192D6E00E7B643 /* AirScoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		38253E111F183A5D00E7B643 /* AirQualConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualConstants.swift; sourceTree = "<group>"; };
 		38253E131F183A6E00E7B643 /* AirQualClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualClient.swift; sourceTree = "<group>"; };
 		38253E151F183A7C00E7B643 /* AirQualConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualConvenience.swift; sourceTree = "<group>"; };
+		38253E171F192D6E00E7B643 /* AirScoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirScoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				38253DDD1F1834A700E7B643 /* Main.storyboard */,
+				38253E171F192D6E00E7B643 /* AirScoreView.swift */,
 				38253DE31F1834A700E7B643 /* Assets.xcassets */,
 				38253DE51F1834A700E7B643 /* LaunchScreen.storyboard */,
 			);
@@ -314,6 +317,7 @@
 				38253DE21F1834A700E7B643 /* Runners__Air_Check.xcdatamodeld in Sources */,
 				38253E121F183A5D00E7B643 /* AirQualConstants.swift in Sources */,
 				38253DDA1F1834A700E7B643 /* AppDelegate.swift in Sources */,
+				38253E181F192D6E00E7B643 /* AirScoreView.swift in Sources */,
 				38253E0F1F1837B200E7B643 /* AirViewController.swift in Sources */,
 				38253E141F183A6E00E7B643 /* AirQualClient.swift in Sources */,
 				38253E161F183A7C00E7B643 /* AirQualConvenience.swift in Sources */,
