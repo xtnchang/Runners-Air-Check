@@ -14,6 +14,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var airScoreLabel: UILabel!
     @IBOutlet weak var airScoreCircle: AirScoreView!
     @IBOutlet weak var cityLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
     
     var cityName: String?
     
@@ -23,7 +24,8 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
   
         searchBar.delegate = self
-        self.airScoreCircle.color = UIColor.gray
+        airScoreCircle.color = UIColor.gray
+        messageLabel.numberOfLines = 0 // Allows multi-line
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,6 +59,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
                         self.cityLabel.text = self.cityName
+                        self.messageLabel.text = "The air’s great! \nGo run your socks off!!"
                         self.airScoreCircle.color = UIColor.green
                     }
                 } else if airQuality! < 100 {
@@ -65,6 +68,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
                         self.cityLabel.text = self.cityName
+                        self.messageLabel.text = "The air’s pretty good. \nGet in those miles!"
                         self.airScoreCircle.color = UIColor.yellow
                     }
                 } else if airQuality! < 150 {
@@ -72,6 +76,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.messageLabel.text = "The air’s okay. Take it easy out there, especially if you have asthma!"
                         self.airScoreCircle.color = UIColor.orange
                     }
                 } else if airQuality! < 200 {
@@ -79,6 +84,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.messageLabel.text = "The air’s not great. Better stick to the treadmill!"
                         self.airScoreCircle.color = UIColor.red
                     }
                 } else if airQuality! < 300 {
@@ -86,6 +92,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.messageLabel.text = "The air’s pretty polluted. Better stick to the treadmill, and avoid going out!"
                         self.airScoreCircle.color = UIColor.purple
                     }
                 } else if airQuality! >= 300 {
@@ -93,6 +100,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.messageLabel.text = "The air is dangerously polluted. Better stick to the treadmill, and keep your windows shut!"
                         self.airScoreCircle.color = UIColor.brown
                     }
                 }
