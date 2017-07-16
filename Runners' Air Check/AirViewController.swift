@@ -121,6 +121,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air is dangerously polluted. Better stick to the treadmill, and keep your windows shut!"
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
