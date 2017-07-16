@@ -88,6 +88,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s okay. Take it easy out there, especially if you have asthma!"
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
@@ -98,6 +99,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s not great. Better stick to the treadmill!"
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
@@ -108,6 +110,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     
                     DispatchQueue.main.async {
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s pretty polluted. Better stick to the treadmill, and avoid going out!"
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
