@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -20,17 +20,17 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
-                                <rect key="frame" x="0.0" y="72" width="414" height="664"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
-                                <rect key="frame" x="0.0" y="72" width="414" height="664"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
-                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="E2m-6g-dqO"/>
@@ -56,7 +56,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-G3-cbU">
-                                <rect key="frame" x="127" y="107" width="232" height="70"/>
+                                <rect key="frame" x="127" y="107" width="232" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="232" id="4D0-y4-2op" userLabel="width = 230"/>
                                 </constraints>
@@ -65,7 +65,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="336" width="338" height="120"/>
+                                <rect key="frame" x="36" y="174" width="305" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="K71-of-xQY" userLabel="height = 120"/>
                                 </constraints>
@@ -80,17 +80,17 @@
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="0l4-d2-lgd" secondAttribute="top" id="APn-c9-mSP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="20" id="Ih1-OR-YIY"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="18" id="Ih1-OR-YIY"/>
                             <constraint firstAttribute="trailing" secondItem="D92-1h-N6c" secondAttribute="trailing" id="JNs-bq-n9y"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
-                            <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="aNr-eR-rDr" secondAttribute="centerY" id="dlT-nK-3of"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="aXM-IZ-UdX" secondAttribute="bottom" constant="280" id="hqZ-uy-C5n" userLabel="Bottom Layout Guide.top = Message Label.bottom + 280"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="g3y-G3-cbU" secondAttribute="bottom" constant="8" id="Vfg-lU-HDM" userLabel="Message Label.top = City Label.bottom + 8"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="aNr-eR-rDr" secondAttribute="centerY" constant="-5.5" id="dlT-nK-3of"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D92-1h-N6c" secondAttribute="bottom" id="icz-8b-7dN"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="q2C-QP-hpR"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rPV-8g-RzR"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="sVu-Su-GlW"/>
-                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="ula-Uh-xDu"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="trailing" secondItem="0l4-d2-lgd" secondAttribute="trailing" id="uoV-ju-b2X"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" id="x0O-sp-udV"/>
                             <constraint firstAttribute="trailing" secondItem="PJS-ZH-53f" secondAttribute="trailing" id="xU8-KZ-OKY"/>
@@ -123,7 +123,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Trail" width="150" height="267"/>
-        <image name="Treadmill" width="404" height="719"/>
+        <image name="Trail" width="250" height="444"/>
+        <image name="Treadmill" width="607" height="1079"/>
     </resources>
 </document>
