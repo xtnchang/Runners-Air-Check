@@ -18,7 +18,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var trailImageView: UIImageView!
     @IBOutlet weak var treadmillImageView: UIImageView!
-    
+    @IBOutlet weak var dogImageView: UIImageView!
     
     var cityName: String?
     
@@ -33,6 +33,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         messageLabel.numberOfLines = 0
         trailImageView.isHidden = true
         treadmillImageView.isHidden = true
+        dogImageView.isHidden = true
         messageLabel.text = "Where will you run today?"
     }
     
@@ -65,9 +66,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Good")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s great! \nGo run your socks off!!"
+                        self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.green
@@ -76,9 +80,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Moderate")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s pretty good. \nGet in those miles!"
+                        self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.yellow
@@ -87,9 +94,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Unhealthy for sensitive groups")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s okay. Take it easy out there, especially if you have asthma!"
+                        self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.orange
@@ -98,9 +108,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Unhealthy")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s not great. Better stick to the treadmill!"
+                        self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.red
@@ -109,9 +122,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Very unhealthy")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air’s pretty polluted. Better stick to the treadmill, and avoid going out!"
+                        self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.purple
@@ -120,9 +136,12 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                     print("Hazardous")
                     
                     DispatchQueue.main.async {
+                        self.airScoreCircle.isHidden = false
                         self.airScoreLabel.text = String(describing: airQuality!)
+                        self.cityLabel.isHidden = false
                         self.cityLabel.text = self.cityName
                         self.messageLabel.text = "The air is dangerously polluted. Better stick to the treadmill, and keep your windows shut!"
+                        self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.brown
@@ -131,7 +150,13 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                 
             } else {
                 
-                print("Sorry, there is currently no data for this city.")
+                DispatchQueue.main.async {
+                    self.airScoreCircle.isHidden = true
+                    self.cityLabel.isHidden = true
+                    self.dogImageView.isHidden = false
+                    self.messageLabel.text = "Sorry, there is currently no data for \(self.cityName!). Go for a run anyway!"
+                }
+
             }
         }
         
