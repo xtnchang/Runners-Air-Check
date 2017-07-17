@@ -248,6 +248,7 @@
 				TargetAttributes = {
 					38253DD51F1834A700E7B643 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = T3W8J2CPB8;
 						ProvisioningStyle = Automatic;
 					};
 					38253DEC1F1834A700E7B643 = {
@@ -470,7 +471,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3W8J2CPB8;
 				INFOPLIST_FILE = "Runners' Air Check/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Runners--Air-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -482,7 +485,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = T3W8J2CPB8;
 				INFOPLIST_FILE = "Runners' Air Check/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Runners--Air-Check";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -563,6 +568,7 @@
 				38253E031F1834A700E7B643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38253E041F1834A700E7B643 /* Build configuration list for PBXNativeTarget "Runners' Air CheckTests" */ = {
 			isa = XCConfigurationList;
@@ -571,6 +577,7 @@
 				38253E061F1834A700E7B643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		38253E071F1834A700E7B643 /* Build configuration list for PBXNativeTarget "Runners' Air CheckUITests" */ = {
 			isa = XCConfigurationList;
@@ -579,6 +586,7 @@
 				38253E091F1834A700E7B643 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

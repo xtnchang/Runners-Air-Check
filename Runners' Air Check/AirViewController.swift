@@ -28,7 +28,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
   
         searchBar.delegate = self
-        airScoreCircle.color = UIColor.gray
+        self.airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
         messageLabel.numberOfLines = 0
         trailImageView.isHidden = true
@@ -58,6 +58,16 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         
         AirQualClient.sharedInstance.getCityAirQuality(cityName: inputString!) { (airQuality, error) in
             
+            guard (error == nil) else {
+                DispatchQueue.main.async {
+                    self.airScoreCircle.isHidden = true
+                    self.cityLabel.isHidden = true
+                    self.dogImageView.isHidden = false
+                    self.messageLabel.text = "\(error!.localizedDescription)"
+                }
+                return
+            }
+            
             if airQuality != nil {
                 
                 print(airQuality ?? "")
@@ -75,6 +85,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.green
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 100 {
                     print("Moderate")
@@ -89,6 +100,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.yellow
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 150 {
                     print("Unhealthy for sensitive groups")
@@ -103,6 +115,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.orange
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 200 {
                     print("Unhealthy")
@@ -117,6 +130,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.red
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 300 {
                     print("Very unhealthy")
@@ -131,6 +145,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.purple
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! >= 300 {
                     print("Hazardous")
@@ -145,6 +160,7 @@ class AirViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.airScoreCircle.color = UIColor.brown
+                        self.airScoreCircle.setNeedsDisplay()
                     }
                 }
                 

@@ -75,7 +75,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.89659891720056573" green="0.95876733553114313" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="PJS-ZH-53f" secondAttribute="leading" id="66w-NR-8AX"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
