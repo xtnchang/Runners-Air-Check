@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zvF-oh-AwJ">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,10 +11,74 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Air View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="bMb-3Z-NSe">
+            <objects>
+                <navigationController id="zvF-oh-AwJ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ns3-oy-Bn8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="4QP-1a-kxx" kind="relationship" relationship="rootViewController" id="Nur-gt-DAR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBJ-ZA-szI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1863" y="11"/>
+        </scene>
+        <!--Tab View Controller-->
+        <scene sceneID="6qH-hq-Pdj">
+            <objects>
+                <tabBarController id="4QP-1a-kxx" customClass="TabViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Ent-z5-t1G"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="7Wx-1g-40n">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="VUh-lL-qF3"/>
+                        <segue destination="Wum-sx-tel" kind="relationship" relationship="viewControllers" id="YrC-76-9ft"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2rd-ZZ-KdB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1079" y="10"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="kXV-aP-lTW">
+            <objects>
+                <tableViewController id="Wum-sx-tel" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TYB-Cc-wlS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kMT-e0-4gb">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMT-e0-4gb" id="tS8-bf-2Eg">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Wum-sx-tel" id="pM9-vQ-eTF"/>
+                            <outlet property="delegate" destination="Wum-sx-tel" id="IJy-7C-fM5"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Z8s-DL-gXJ"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cSR-I5-8Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-196" y="318"/>
+        </scene>
+        <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="AirViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SearchViewController" id="BYZ-38-t0r" userLabel="Search View Controller" customClass="SearchViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -24,24 +88,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
                                 <rect key="frame" x="0.0" y="72" width="375" height="595"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="E2m-6g-dqO"/>
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-eR-rDr" customClass="AirScoreView" customModule="Runners__Air_Check" customModuleProvider="target">
-                                <rect key="frame" x="36" y="107" width="70" height="70"/>
+                                <rect key="frame" x="36" y="143" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x9-Cf-da5" userLabel="Air Score Label">
                                         <rect key="frame" x="35" y="35" width="0.0" height="0.0"/>
@@ -60,13 +124,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-G3-cbU">
-                                <rect key="frame" x="127" y="107" width="248" height="70"/>
+                                <rect key="frame" x="127" y="143" width="248" height="70"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="185" width="305" height="140"/>
+                                <rect key="frame" x="36" y="221" width="305" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="K71-of-xQY"/>
                                 </constraints>
@@ -86,12 +150,12 @@
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
-                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="g3y-G3-cbU" secondAttribute="bottom" constant="8" symbolic="YES" id="Vfg-lU-HDM" userLabel="Message Label.top = City Label.bottom"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="aNr-eR-rDr" secondAttribute="bottom" constant="8" id="R6t-8N-Bxd" userLabel="Message Label.top = Air Score Circle.bottom"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="4x9-Cf-da5" secondAttribute="centerY" id="gVF-s1-Tp7"/>
+                            <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iN4-qh-8Ek" userLabel="Search Bar.top = Top Layout Guide.bottom"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D92-1h-N6c" secondAttribute="bottom" id="icz-8b-7dN"/>
                             <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="q2C-QP-hpR"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rPV-8g-RzR"/>
-                            <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="sVu-Su-GlW"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="trailing" secondItem="0l4-d2-lgd" secondAttribute="trailing" id="uoV-ju-b2X"/>
                             <constraint firstAttribute="trailing" secondItem="g3y-G3-cbU" secondAttribute="trailing" id="vct-i6-xem"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" id="x0O-sp-udV"/>
@@ -99,6 +163,7 @@
                             <constraint firstItem="D92-1h-N6c" firstAttribute="bottom" secondItem="0l4-d2-lgd" secondAttribute="bottom" id="yta-nh-Qug"/>
                         </constraints>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="GFW-fh-fLF"/>
                     <connections>
                         <outlet property="airScoreCircle" destination="aNr-eR-rDr" id="hof-8f-bGR"/>
                         <outlet property="airScoreLabel" destination="4x9-Cf-da5" id="63n-L8-Y3b"/>
@@ -122,12 +187,12 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
+            <point key="canvasLocation" x="-196" y="-358"/>
         </scene>
     </scenes>
     <resources>
         <image name="Dog" width="672" height="1195"/>
-        <image name="Trail" width="250" height="444"/>
+        <image name="Trail" width="224" height="398"/>
         <image name="Treadmill" width="607" height="1079"/>
     </resources>
 </document>

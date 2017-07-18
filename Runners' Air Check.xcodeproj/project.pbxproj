@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		381275D51F1D3CD500636EF2 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D31F1D3CD500636EF2 /* Location+CoreDataClass.swift */; };
 		381275D61F1D3CD500636EF2 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D41F1D3CD500636EF2 /* Location+CoreDataProperties.swift */; };
+		381275D81F1E701C00636EF2 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D71F1E701C00636EF2 /* TabViewController.swift */; };
 		38253DDA1F1834A700E7B643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253DD91F1834A700E7B643 /* AppDelegate.swift */; };
 		38253DDF1F1834A700E7B643 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38253DDD1F1834A700E7B643 /* Main.storyboard */; };
 		38253DE21F1834A700E7B643 /* Runners__Air_Check.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 38253DE01F1834A700E7B643 /* Runners__Air_Check.xcdatamodeld */; };
@@ -16,7 +17,7 @@
 		38253DE71F1834A700E7B643 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38253DE51F1834A700E7B643 /* LaunchScreen.storyboard */; };
 		38253DF21F1834A700E7B643 /* Runners__Air_CheckTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253DF11F1834A700E7B643 /* Runners__Air_CheckTests.swift */; };
 		38253DFD1F1834A700E7B643 /* Runners__Air_CheckUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253DFC1F1834A700E7B643 /* Runners__Air_CheckUITests.swift */; };
-		38253E0F1F1837B200E7B643 /* AirViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E0E1F1837B200E7B643 /* AirViewController.swift */; };
+		38253E0F1F1837B200E7B643 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E0E1F1837B200E7B643 /* SearchViewController.swift */; };
 		38253E121F183A5D00E7B643 /* AirQualConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E111F183A5D00E7B643 /* AirQualConstants.swift */; };
 		38253E141F183A6E00E7B643 /* AirQualClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E131F183A6E00E7B643 /* AirQualClient.swift */; };
 		38253E161F183A7C00E7B643 /* AirQualConvenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253E151F183A7C00E7B643 /* AirQualConvenience.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		381275D31F1D3CD500636EF2 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "../Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		381275D41F1D3CD500636EF2 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		381275D71F1E701C00636EF2 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		38253DD61F1834A700E7B643 /* Runners' Air Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Runners' Air Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38253DD91F1834A700E7B643 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		38253DDE1F1834A700E7B643 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -56,7 +58,7 @@
 		38253DF81F1834A700E7B643 /* Runners' Air CheckUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Runners' Air CheckUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		38253DFC1F1834A700E7B643 /* Runners__Air_CheckUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Runners__Air_CheckUITests.swift; sourceTree = "<group>"; };
 		38253DFE1F1834A700E7B643 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		38253E0E1F1837B200E7B643 /* AirViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirViewController.swift; sourceTree = "<group>"; };
+		38253E0E1F1837B200E7B643 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		38253E111F183A5D00E7B643 /* AirQualConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualConstants.swift; sourceTree = "<group>"; };
 		38253E131F183A6E00E7B643 /* AirQualClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualClient.swift; sourceTree = "<group>"; };
 		38253E151F183A7C00E7B643 /* AirQualConvenience.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirQualConvenience.swift; sourceTree = "<group>"; };
@@ -170,7 +172,8 @@
 		38253E0D1F18350B00E7B643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				38253E0E1F1837B200E7B643 /* AirViewController.swift */,
+				38253E0E1F1837B200E7B643 /* SearchViewController.swift */,
+				381275D71F1E701C00636EF2 /* TabViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -327,8 +330,9 @@
 				38253E181F192D6E00E7B643 /* AirScoreView.swift in Sources */,
 				381275D51F1D3CD500636EF2 /* Location+CoreDataClass.swift in Sources */,
 				381275D61F1D3CD500636EF2 /* Location+CoreDataProperties.swift in Sources */,
-				38253E0F1F1837B200E7B643 /* AirViewController.swift in Sources */,
+				38253E0F1F1837B200E7B643 /* SearchViewController.swift in Sources */,
 				38253E141F183A6E00E7B643 /* AirQualClient.swift in Sources */,
+				381275D81F1E701C00636EF2 /* TabViewController.swift in Sources */,
 				38253E161F183A7C00E7B643 /* AirQualConvenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

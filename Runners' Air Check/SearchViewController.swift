@@ -1,5 +1,5 @@
 //
-//  AirViewController.swift
+//  SearchViewController.swift
 //  Runners' Air Check
 //
 //  Created by Christine Chang on 7/13/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AirViewController: UIViewController, UISearchBarDelegate {
+class SearchViewController: UIViewController, UISearchBarDelegate {
 
     @IBOutlet var fullScreenView: UIView!
     @IBOutlet weak var searchBar: UISearchBar!
@@ -52,11 +52,11 @@ class AirViewController: UIViewController, UISearchBarDelegate {
         
         self.cityName = searchBar.text
         
-        let inputString = searchBar.text?.removeWhitespace()
+        let cityNameConcatenate = searchBar.text?.removeWhitespace()
         
-        print(inputString ?? "")
+        print(cityNameConcatenate ?? "")
         
-        AirQualClient.sharedInstance.getCityAirQuality(cityName: inputString!) { (airQuality, error) in
+        AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityName!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
             
             guard (error == nil) else {
                 DispatchQueue.main.async {

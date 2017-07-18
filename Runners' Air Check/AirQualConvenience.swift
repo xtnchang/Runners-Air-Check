@@ -10,9 +10,9 @@ import Foundation
 
 extension AirQualClient {
 
-    func getCityAirQuality(cityName: String, completionHandlerForData: @escaping (_ airQuality: Int?, _ error: NSError?) -> Void) {
+    func getCityAirQuality(inputString: String, inputStringConcatenate: String, completionHandlerForData: @escaping (_ airQuality: Int?, _ error: NSError?) -> Void) {
         
-        let parameter = cityName
+        let parameter = inputStringConcatenate
         
         // Sample URL: https://api.waqi.info/search/?token=42507480451ec3dbed7ad60e6cf0528daba22dda&keyword=losangeles
         
@@ -45,7 +45,7 @@ extension AirQualClient {
             }
             
             if data.isEmpty {
-                sendError(error: "There is no data for the city you entered.")
+                sendError(error: "Sorry, there is currently no data for \(inputString).")
                 return
             }
             
