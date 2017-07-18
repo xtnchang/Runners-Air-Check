@@ -46,22 +46,25 @@
             </objects>
             <point key="canvasLocation" x="-1079" y="10"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Saved Table View Controller-->
         <scene sceneID="kXV-aP-lTW">
             <objects>
-                <tableViewController id="Wum-sx-tel" sceneMemberID="viewController">
+                <tableViewController id="Wum-sx-tel" userLabel="Saved Table View Controller" customClass="SavedTableViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TYB-Cc-wlS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="kMT-e0-4gb">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CityNameCell" id="kMT-e0-4gb">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMT-e0-4gb" id="tS8-bf-2Eg">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="Ilr-ls-69N" kind="show" id="0w8-S2-RQu"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -69,11 +72,29 @@
                             <outlet property="delegate" destination="Wum-sx-tel" id="IJy-7C-fM5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" systemItem="favorites" id="Z8s-DL-gXJ"/>
+                    <tabBarItem key="tabBarItem" title="Saved Cities" image="Star" selectedImage="Star" id="Z8s-DL-gXJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSR-I5-8Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-196" y="318"/>
+        </scene>
+        <!--Air Score View Controller-->
+        <scene sceneID="vfY-uD-hYd">
+            <objects>
+                <viewController storyboardIdentifier="AirScoreViewController" id="Ilr-ls-69N" userLabel="Air Score View Controller" customClass="AirScoreViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KiT-kl-4T7"/>
+                        <viewControllerLayoutGuide type="bottom" id="aw2-jj-JI8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DxF-ur-LVW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eZY-gK-ReD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="527" y="321"/>
         </scene>
         <!--Search View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -130,9 +151,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="221" width="305" height="140"/>
+                                <rect key="frame" x="36" y="198" width="305" height="120"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="140" id="K71-of-xQY"/>
+                                    <constraint firstAttribute="height" constant="120" id="K71-of-xQY"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -145,12 +166,12 @@
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="0l4-d2-lgd" secondAttribute="top" id="APn-c9-mSP"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="4x9-Cf-da5" secondAttribute="bottom" constant="20" id="Hw4-3G-j6s" userLabel="Message Label.top = Air Score Label.bottom + 20"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="18" id="Ih1-OR-YIY"/>
                             <constraint firstAttribute="trailing" secondItem="D92-1h-N6c" secondAttribute="trailing" id="JNs-bq-n9y"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
-                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="aNr-eR-rDr" secondAttribute="bottom" constant="8" id="R6t-8N-Bxd" userLabel="Message Label.top = Air Score Circle.bottom"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="4x9-Cf-da5" secondAttribute="centerY" id="gVF-s1-Tp7"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iN4-qh-8Ek" userLabel="Search Bar.top = Top Layout Guide.bottom"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D92-1h-N6c" secondAttribute="bottom" id="icz-8b-7dN"/>
@@ -192,6 +213,7 @@
     </scenes>
     <resources>
         <image name="Dog" width="672" height="1195"/>
+        <image name="Star" width="25" height="25"/>
         <image name="Trail" width="224" height="398"/>
         <image name="Treadmill" width="607" height="1079"/>
     </resources>
