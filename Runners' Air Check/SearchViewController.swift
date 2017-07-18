@@ -19,14 +19,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var trailImageView: UIImageView!
     @IBOutlet weak var treadmillImageView: UIImageView!
     @IBOutlet weak var dogImageView: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
     
     var cityName: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-  
+        
         searchBar.delegate = self
         self.airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
@@ -34,16 +35,24 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         trailImageView.isHidden = true
         treadmillImageView.isHidden = true
         dogImageView.isHidden = true
+        saveButton.isHidden = true
         messageLabel.text = "Where will you run today?"
     }
     
     override func viewWillAppear(_ animated: Bool) {
         return
     }
-        
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: Any) {
+        
+        // Somehow append the city name to the savedCityArray in table view controller
+        
+        // SavedTableViewController.sharedInstance.savedCityArray.append(self.cityName)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -62,6 +71,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
+                    self.saveButton.isHidden = true
                     self.dogImageView.isHidden = false
                     self.messageLabel.text = "\(error!.localizedDescription)"
                 }
@@ -84,8 +94,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.green
                         self.airScoreCircle.setNeedsDisplay()
+                        self.saveButton.layer.borderWidth = 1
+                        self.saveButton.layer.borderColor = UIColor.white.cgColor
                     }
                 } else if airQuality! < 100 {
                     print("Moderate")
@@ -99,6 +112,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.yellow
                         self.airScoreCircle.setNeedsDisplay()
                     }
@@ -114,6 +128,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.orange
                         self.airScoreCircle.setNeedsDisplay()
                     }
@@ -129,6 +144,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.red
                         self.airScoreCircle.setNeedsDisplay()
                     }
@@ -144,6 +160,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.purple
                         self.airScoreCircle.setNeedsDisplay()
                     }
@@ -159,6 +176,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.dogImageView.isHidden = true
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
+                        self.saveButton.isHidden = false
                         self.airScoreCircle.color = UIColor.brown
                         self.airScoreCircle.setNeedsDisplay()
                     }

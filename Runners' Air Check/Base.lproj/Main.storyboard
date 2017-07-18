@@ -49,7 +49,7 @@
         <!--Saved Table View Controller-->
         <scene sceneID="kXV-aP-lTW">
             <objects>
-                <tableViewController id="Wum-sx-tel" userLabel="Saved Table View Controller" customClass="SavedTableViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SavedTableViewController" id="Wum-sx-tel" userLabel="Saved Table View Controller" customClass="SavedTableViewController" customModule="Runners__Air_Check" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="TYB-Cc-wlS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -72,7 +72,7 @@
                             <outlet property="delegate" destination="Wum-sx-tel" id="IJy-7C-fM5"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Saved Cities" image="Star" selectedImage="Star" id="Z8s-DL-gXJ"/>
+                    <tabBarItem key="tabBarItem" title="Saved Locations" image="Star" selectedImage="Star" id="Z8s-DL-gXJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cSR-I5-8Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -114,9 +114,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
                                 <rect key="frame" x="0.0" y="108" width="375" height="510"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
-                                <rect key="frame" x="0.0" y="72" width="375" height="595"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
                                 <rect key="frame" x="0.0" y="64" width="375" height="44"/>
@@ -159,20 +158,39 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nX-Pq-YUs">
+                                <rect key="frame" x="88" y="537" width="200" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="DOg-0g-vEn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                                <state key="normal" title="Save This Location">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="saveButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xtN-Bh-yvj"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.89659891720056573" green="0.95876733553114313" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="PJS-ZH-53f" secondAttribute="leading" id="66w-NR-8AX"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="8EP-GB-Db4"/>
+                            <constraint firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="9oL-PZ-Djr"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="0l4-d2-lgd" secondAttribute="top" id="APn-c9-mSP"/>
+                            <constraint firstItem="5nX-Pq-YUs" firstAttribute="top" secondItem="X0q-cB-Yfc" secondAttribute="bottom" constant="-130" id="Btx-st-cOY" userLabel="Save Button.top = Dog Image View.bottom - 130"/>
+                            <constraint firstItem="5nX-Pq-YUs" firstAttribute="centerX" secondItem="X0q-cB-Yfc" secondAttribute="centerX" id="DgS-kL-BTm"/>
                             <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="4x9-Cf-da5" secondAttribute="bottom" constant="20" id="Hw4-3G-j6s" userLabel="Message Label.top = Air Score Label.bottom + 20"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="18" id="Ih1-OR-YIY"/>
                             <constraint firstAttribute="trailing" secondItem="D92-1h-N6c" secondAttribute="trailing" id="JNs-bq-n9y"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="trailing" secondItem="0l4-d2-lgd" secondAttribute="trailing" id="dVV-vi-zzy"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="4x9-Cf-da5" secondAttribute="centerY" id="gVF-s1-Tp7"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gjD-cP-Hu2"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iN4-qh-8Ek" userLabel="Search Bar.top = Top Layout Guide.bottom"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="D92-1h-N6c" secondAttribute="bottom" id="icz-8b-7dN"/>
                             <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="q2C-QP-hpR"/>
@@ -192,6 +210,7 @@
                         <outlet property="dogImageView" destination="X0q-cB-Yfc" id="MLv-Fh-9OP"/>
                         <outlet property="fullScreenView" destination="8bC-Xf-vdC" id="fEw-Xk-gHx"/>
                         <outlet property="messageLabel" destination="aXM-IZ-UdX" id="jWG-Z5-agu"/>
+                        <outlet property="saveButton" destination="5nX-Pq-YUs" id="5RF-ad-Mzm"/>
                         <outlet property="searchBar" destination="PJS-ZH-53f" id="05R-yv-axv"/>
                         <outlet property="searchDisplayController" destination="cFn-nZ-1iq" id="itH-OA-7Mr"/>
                         <outlet property="trailImageView" destination="0l4-d2-lgd" id="tfp-Bg-2sr"/>

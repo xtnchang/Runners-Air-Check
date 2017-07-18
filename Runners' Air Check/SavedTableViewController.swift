@@ -9,6 +9,8 @@
 import UIKit
 
 class SavedTableViewController: UITableViewController {
+    
+    var savedCityArray: [String]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,8 @@ class SavedTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        print(savedCityArray ?? "")
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,7 +33,7 @@ class SavedTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 5
+        return (savedCityArray?.count)!
     }
 
     
@@ -37,8 +41,7 @@ class SavedTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityNameCell", for: indexPath)
 
-        // Configure the cell...
-        cell.textLabel?.text = "Placeholder"
+        cell.textLabel?.text = savedCityArray?[indexPath.row]
 
         return cell
     }
@@ -47,7 +50,7 @@ class SavedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // present AirScoreViewController
+        // present AirScoreViewController with air score for the city name
     }
 
 }

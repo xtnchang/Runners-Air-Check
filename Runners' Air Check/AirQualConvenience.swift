@@ -45,7 +45,7 @@ extension AirQualClient {
             }
             
             if data.isEmpty {
-                sendError(error: "Sorry, there is currently no data for \(inputString).")
+                sendError(error: "Sorry, there is currently no data for \(inputString). Go for a run anyway!")
                 return
             }
             
