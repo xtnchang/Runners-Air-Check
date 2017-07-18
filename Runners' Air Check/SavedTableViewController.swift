@@ -10,7 +10,7 @@ import UIKit
 
 class SavedTableViewController: UITableViewController {
     
-    var savedCityArray: [String]?
+    var savedCityArray: [String]? = ["Placeholder"]
 
     override func viewDidLoad() {
         super.viewDidLoad()
