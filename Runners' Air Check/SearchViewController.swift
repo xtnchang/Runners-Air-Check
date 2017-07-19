@@ -37,15 +37,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         dogImageView.isHidden = true
         saveButton.isHidden = true
         messageLabel.text = "Where will you run today?"
+        
+        // When user taps anywhere in the UIView, dismiss the keyboard
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        view.addGestureRecognizer(tap)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        return
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func dismissKeyboard() {
+        
+        view.endEditing(true)
     }
     
     @IBAction func saveButtonPressed(_ sender: Any) {
@@ -86,7 +86,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 print(airQuality ?? "")
                 
                 if airQuality! < 51 {
-                    print("Good")
+                    print("Good: green.")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -98,13 +98,13 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.green
+                        self.airScoreCircle.color = UIColor(red: 0.6824, green: 1, blue: 0.4863, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                         self.saveButton.layer.borderWidth = 1
                         self.saveButton.layer.borderColor = UIColor.white.cgColor
                     }
                 } else if airQuality! < 100 {
-                    print("Moderate")
+                    print("Moderate: yellow")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -116,11 +116,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.yellow
+                        self.airScoreCircle.color = UIColor(red: 1, green: 0.9647, blue: 0.4863, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 150 {
-                    print("Unhealthy for sensitive groups")
+                    print("Unhealthy for sensitive groups: orange")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -132,11 +132,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.treadmillImageView.isHidden = true
                         self.trailImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.orange
+                        self.airScoreCircle.color = UIColor(red: 1, green: 0.7843, blue: 0.4863, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 200 {
-                    print("Unhealthy")
+                    print("Unhealthy: red")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -148,11 +148,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.red
+                        self.airScoreCircle.color = UIColor(red: 0.9569, green: 0.4667, blue: 0.4667, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! < 300 {
-                    print("Very unhealthy")
+                    print("Very unhealthy: purple")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -164,11 +164,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.purple
+                        self.airScoreCircle.color = UIColor(red: 0.651, green: 0.5059, blue: 0.7569, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                     }
                 } else if airQuality! >= 300 {
-                    print("Hazardous")
+                    print("Hazardous: brown")
                     
                     DispatchQueue.main.async {
                         self.airScoreCircle.isHidden = false
@@ -180,7 +180,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                         self.trailImageView.isHidden = true
                         self.treadmillImageView.isHidden = false
                         self.saveButton.isHidden = false
-                        self.airScoreCircle.color = UIColor.brown
+                        self.airScoreCircle.color = UIColor(red: 0.6196, green: 0.5333, blue: 0.4118, alpha: 1.0)
                         self.airScoreCircle.setNeedsDisplay()
                     }
                 }
@@ -198,6 +198,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         }
         
         searchBar.text = ""
+        
+        searchBar.endEditing(true)
     }
 
 }
