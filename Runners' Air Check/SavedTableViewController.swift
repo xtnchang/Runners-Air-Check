@@ -32,7 +32,7 @@ class SavedTableViewController: UITableViewController {
     // MARK: - UITableViewDataSource methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        
         return (savedCityArray?.count)!
     }
 
@@ -44,6 +44,17 @@ class SavedTableViewController: UITableViewController {
         cell.textLabel?.text = savedCityArray?[indexPath.row]
 
         return cell
+    }
+    
+    // Delete row
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            print("Clicked Delete")
+            
+            // self.savedCityArray.remove(at: indexPath.row)
+            // self.tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
  
     // MARK: - UITableViewDelegate methods

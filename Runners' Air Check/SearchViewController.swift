@@ -53,6 +53,9 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         // Somehow append the city name to the savedCityArray in table view controller
         
         // SavedTableViewController.sharedInstance.savedCityArray.append(self.cityName)
+        
+//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") as! SavedTableViewController
+//        controller.savedCityArray.append(self.cityName)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
