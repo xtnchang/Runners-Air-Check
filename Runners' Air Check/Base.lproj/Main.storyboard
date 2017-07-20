@@ -64,7 +64,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="Ilr-ls-69N" kind="show" id="0w8-S2-RQu"/>
+                                    <segue destination="Ilr-ls-69N" kind="show" identifier="showAirScore" id="0w8-S2-RQu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,11 +88,79 @@
                         <viewControllerLayoutGuide type="top" id="KiT-kl-4T7"/>
                         <viewControllerLayoutGuide type="bottom" id="aw2-jj-JI8"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="DxF-ur-LVW">
+                    <view key="view" contentMode="scaleToFill" id="DxF-ur-LVW" userLabel="Full Screen View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="AEw-YF-R02">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="T7i-no-vsm">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z2b-f7-y4s" userLabel="Air Score Circle" customClass="AirScoreView" customModule="Runners__Air_Check" customModuleProvider="target">
+                                <rect key="frame" x="46" y="94" width="70" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1uk-op-J0J" userLabel="Air Score Label">
+                                        <rect key="frame" x="35" y="35" width="0.0" height="0.0"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="1uk-op-J0J" firstAttribute="centerY" secondItem="z2b-f7-y4s" secondAttribute="centerY" id="Gu1-Xt-y9R"/>
+                                    <constraint firstAttribute="width" constant="70" id="LFz-lr-nAh"/>
+                                    <constraint firstItem="1uk-op-J0J" firstAttribute="centerX" secondItem="z2b-f7-y4s" secondAttribute="centerX" id="Ypn-A2-n1P"/>
+                                    <constraint firstAttribute="height" constant="70" id="jla-by-9LY"/>
+                                    <constraint firstAttribute="width" secondItem="z2b-f7-y4s" secondAttribute="height" multiplier="1:1" id="s7g-Qz-Syu"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ANw-Oc-u4a" userLabel="City Label">
+                                <rect key="frame" x="146" y="129" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHi-ky-jMN" userLabel="Message Label">
+                                <rect key="frame" x="46" y="149" width="0.0" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="Aqu-gS-fCe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AEw-YF-R02" firstAttribute="top" secondItem="DxF-ur-LVW" secondAttribute="top" id="AdP-Io-Zyx"/>
+                            <constraint firstItem="ANw-Oc-u4a" firstAttribute="leading" secondItem="z2b-f7-y4s" secondAttribute="trailing" constant="30" id="Gk7-8t-IdR"/>
+                            <constraint firstItem="ANw-Oc-u4a" firstAttribute="centerY" secondItem="z2b-f7-y4s" secondAttribute="centerY" id="HwQ-sL-i5B"/>
+                            <constraint firstItem="AEw-YF-R02" firstAttribute="leading" secondItem="DxF-ur-LVW" secondAttribute="leading" id="QGg-1T-laL"/>
+                            <constraint firstItem="z2b-f7-y4s" firstAttribute="width" secondItem="z2b-f7-y4s" secondAttribute="height" multiplier="1:1" id="QXE-G6-9Dj"/>
+                            <constraint firstItem="RHi-ky-jMN" firstAttribute="leading" secondItem="z2b-f7-y4s" secondAttribute="leading" id="bbk-v4-LM4"/>
+                            <constraint firstItem="z2b-f7-y4s" firstAttribute="leading" secondItem="DxF-ur-LVW" secondAttribute="leadingMargin" constant="30" id="dTP-Eu-gyw"/>
+                            <constraint firstAttribute="trailing" secondItem="AEw-YF-R02" secondAttribute="trailing" id="dmO-zE-WvD"/>
+                            <constraint firstItem="T7i-no-vsm" firstAttribute="leading" secondItem="AEw-YF-R02" secondAttribute="leading" id="lb4-mp-grq"/>
+                            <constraint firstItem="T7i-no-vsm" firstAttribute="trailing" secondItem="AEw-YF-R02" secondAttribute="trailing" id="mDD-5A-olB"/>
+                            <constraint firstItem="T7i-no-vsm" firstAttribute="bottom" secondItem="AEw-YF-R02" secondAttribute="bottom" id="n7x-1g-xdD"/>
+                            <constraint firstAttribute="bottom" secondItem="AEw-YF-R02" secondAttribute="bottom" id="nG4-tR-waO"/>
+                            <constraint firstItem="T7i-no-vsm" firstAttribute="top" secondItem="AEw-YF-R02" secondAttribute="top" id="nXE-cH-U4P"/>
+                            <constraint firstItem="RHi-ky-jMN" firstAttribute="top" secondItem="1uk-op-J0J" secondAttribute="bottom" constant="20" id="qpq-Ow-UXC"/>
+                            <constraint firstItem="z2b-f7-y4s" firstAttribute="top" secondItem="KiT-kl-4T7" secondAttribute="bottom" constant="30" id="tAD-Zb-jte"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="airScoreCircle" destination="z2b-f7-y4s" id="In5-Vv-MXh"/>
+                        <outlet property="airScoreLabel" destination="1uk-op-J0J" id="cwm-sF-Cfm"/>
+                        <outlet property="cityLabel" destination="ANw-Oc-u4a" id="HRI-Rx-H9y"/>
+                        <outlet property="fullScreenView" destination="DxF-ur-LVW" id="zlV-gr-fc2"/>
+                        <outlet property="messageLabel" destination="RHi-ky-jMN" id="bNk-z7-5w9"/>
+                        <outlet property="trailImageView" destination="AEw-YF-R02" id="t9o-sy-uCD"/>
+                        <outlet property="treadmillImageView" destination="T7i-no-vsm" id="eQa-yU-xmv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZY-gK-ReD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,23 +179,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
-                                <rect key="frame" x="0.0" y="64" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="E2m-6g-dqO"/>
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-eR-rDr" customClass="AirScoreView" customModule="Runners__Air_Check" customModuleProvider="target">
-                                <rect key="frame" x="36" y="143" width="70" height="70"/>
+                                <rect key="frame" x="36" y="99" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x9-Cf-da5" userLabel="Air Score Label">
                                         <rect key="frame" x="35" y="35" width="0.0" height="0.0"/>
@@ -146,13 +214,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-G3-cbU">
-                                <rect key="frame" x="127" y="143" width="248" height="70"/>
+                                <rect key="frame" x="127" y="99" width="248" height="70"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="198" width="305" height="120"/>
+                                <rect key="frame" x="36" y="154" width="305" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="K71-of-xQY"/>
                                 </constraints>
@@ -179,6 +247,7 @@
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="PJS-ZH-53f" secondAttribute="leading" id="66w-NR-8AX"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
                             <constraint firstItem="X0q-cB-Yfc" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="8EP-GB-Db4"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8m4-iv-Caj"/>
                             <constraint firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="9oL-PZ-Djr"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="0l4-d2-lgd" secondAttribute="top" id="APn-c9-mSP" userLabel="Treadmill Image View.top = Dog Image View.top"/>
@@ -191,10 +260,9 @@
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
+                            <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vfg-x9-vRH"/>
                             <constraint firstItem="X0q-cB-Yfc" firstAttribute="trailing" secondItem="0l4-d2-lgd" secondAttribute="trailing" id="dVV-vi-zzy"/>
                             <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="4x9-Cf-da5" secondAttribute="centerY" id="gVF-s1-Tp7"/>
-                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="gjD-cP-Hu2"/>
-                            <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="iN4-qh-8Ek" userLabel="Search Bar.top = Top Layout Guide.bottom"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="jwf-hb-mg6"/>
                             <constraint firstItem="0l4-d2-lgd" firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="oJx-0r-uq5"/>
                             <constraint firstItem="aXM-IZ-UdX" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="leading" id="q2C-QP-hpR"/>

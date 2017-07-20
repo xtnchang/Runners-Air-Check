@@ -61,7 +61,18 @@ class SavedTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        // present AirScoreViewController with air score for the city name
+        // Each row automatically segues to AirScoreViewController when tapped, since the segue is configured in storyboard. Pass data in prepare(for segue) method.
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "showAirScore" {
+            
+            if let indexPath = tableView.indexPathForSelectedRow, let vc = segue.destination as? AirScoreViewController {
+                
+                vc.cityNameTapped = savedCitiesArray[indexPath.row]
+            }
+        }
     }
 
 }

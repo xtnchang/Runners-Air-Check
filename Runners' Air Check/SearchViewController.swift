@@ -29,7 +29,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         // Do any additional setup after loading the view.
         
         searchBar.delegate = self
-        self.airScoreCircle.isHidden = true
+        airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
         messageLabel.numberOfLines = 0
         trailImageView.isHidden = true
