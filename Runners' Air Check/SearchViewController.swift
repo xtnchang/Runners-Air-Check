@@ -39,7 +39,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         messageLabel.text = "Where will you run today?"
         
         // When user taps anywhere in the UIView, dismiss the keyboard
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "dismissKeyboard")
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SearchViewController.dismissKeyboard))
         view.addGestureRecognizer(tap)
     }
     
@@ -50,12 +50,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     @IBAction func saveButtonPressed(_ sender: Any) {
         
-        // Somehow append the city name to the savedCityArray in table view controller
+        print("Save button pressed for \(self.cityName)")
         
-        // SavedTableViewController.sharedInstance.savedCityArray.append(self.cityName)
-        
-//        let controller = self.storyboard?.instantiateViewController(withIdentifier: "SavedTableViewController") as! SavedTableViewController
-//        controller.savedCityArray.append(self.cityName)
+        let tabBar = self.tabBarController as! TabViewController
+        tabBar.savedCitiesArray.append(self.cityName!)
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -193,12 +191,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.dogImageView.isHidden = false
                     self.messageLabel.text = "Sorry, there is currently no data for \(self.cityName!). Go for a run anyway!"
                 }
-
             }
         }
         
         searchBar.text = ""
-        
         searchBar.endEditing(true)
     }
 

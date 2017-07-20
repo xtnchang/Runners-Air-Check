@@ -10,25 +10,31 @@ import UIKit
 
 class SavedTableViewController: UITableViewController {
     
-    var savedCityArray: [String]? = ["Placeholder"]
+    var savedCitiesArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
-        print(savedCityArray ?? "")
+        navigationItem.title = "Where I Run"
+        
+        let tabBar = self.tabBarController as! TabViewController
+        savedCitiesArray = tabBar.savedCitiesArray
+
+        print(savedCitiesArray)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
+//        let tabBar = self.tabBarController as! TabViewController
+//        savedCityArray = tabBar.savedCityArray
+//        print(savedCityArray)
     }
 
     // MARK: - UITableViewDataSource methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return (savedCityArray?.count)!
+        return (savedCitiesArray.count)
     }
 
     
@@ -36,7 +42,8 @@ class SavedTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CityNameCell", for: indexPath)
 
-        cell.textLabel?.text = savedCityArray?[indexPath.row]
+        cell.textLabel?.text = savedCitiesArray[indexPath.row]
+        cell.textLabel?.font = UIFont(name: "Avenir", size: 20)
 
         return cell
     }
@@ -47,8 +54,9 @@ class SavedTableViewController: UITableViewController {
         if editingStyle == .delete {
             print("Clicked Delete")
             
-            // self.savedCityArray.remove(at: indexPath.row)
-            // self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.savedCitiesArray.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .automatic)
+            self.tableView.reloadData()
         }
     }
  

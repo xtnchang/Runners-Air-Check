@@ -9,6 +9,8 @@
 import UIKit
 
 class TabViewController: UITabBarController {
+    
+    var savedCitiesArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
