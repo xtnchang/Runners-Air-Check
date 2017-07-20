@@ -16,18 +16,15 @@ class SavedTableViewController: UITableViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Where I Run"
-        
-        let tabBar = self.tabBarController as! TabViewController
-        savedCitiesArray = tabBar.savedCitiesArray
-
-        print(savedCitiesArray)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         
-//        let tabBar = self.tabBarController as! TabViewController
-//        savedCityArray = tabBar.savedCityArray
-//        print(savedCityArray)
+        let tabBar = self.tabBarController as! TabViewController
+        savedCitiesArray = tabBar.savedCitiesArray
+        tableView.reloadData()
+        
+        print(savedCitiesArray)
     }
 
     // MARK: - UITableViewDataSource methods
