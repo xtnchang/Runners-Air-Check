@@ -17,12 +17,15 @@ class AirScoreViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var trailImageView: UIImageView!
     @IBOutlet weak var treadmillImageView: UIImageView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var cityNameTapped: String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityIndicator.startAnimating()
+        activityIndicator.hidesWhenStopped = true
         airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
         messageLabel.numberOfLines = 0
@@ -147,6 +150,8 @@ class AirScoreViewController: UIViewController {
                 }
             }
         }
+        
+        activityIndicator.stopAnimating()
     }
 
 }

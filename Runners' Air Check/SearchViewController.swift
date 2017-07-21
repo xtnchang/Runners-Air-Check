@@ -20,6 +20,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var treadmillImageView: UIImageView!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var cityName: String?
     
@@ -28,6 +29,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         
+        activityIndicator.hidesWhenStopped = true
         searchBar.delegate = self
         airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
@@ -65,6 +67,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         let cityNameConcatenate = searchBar.text?.removeWhitespace()
         
         print(cityNameConcatenate ?? "")
+        
+        activityIndicator.startAnimating()
         
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityName!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
             
@@ -196,6 +200,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         searchBar.text = ""
         searchBar.endEditing(true)
+        activityIndicator.stopAnimating()
     }
 
 }
