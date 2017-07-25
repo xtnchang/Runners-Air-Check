@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class SearchViewController: UIViewController, UISearchBarDelegate {
 
@@ -23,6 +24,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var cityName: String?
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,6 +59,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         let tabBar = self.tabBarController as! TabViewController
         tabBar.savedCitiesArray.append(self.cityName!)
+        
+        /*** Core Data ***/
+        let savedLocation = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context)
+        
+        savedLocation.setValue(self.cityName, forKey: "city")
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
