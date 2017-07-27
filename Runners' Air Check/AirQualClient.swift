@@ -28,7 +28,7 @@ class AirQualClient {
             
             /* GUARD: Was there an error? */
             guard (error == nil) else {
-                sendError(error: "There was an error with your request: \(error?.localizedDescription)")
+                sendError(error: "\(error!.localizedDescription)")
                 return
             }
             

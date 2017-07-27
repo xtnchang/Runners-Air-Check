@@ -25,6 +25,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
     
     var cityName: String?
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     override func viewDidLoad() {
@@ -57,13 +58,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         print("Save button pressed for \(self.cityName)")
         
-        let tabBar = self.tabBarController as! TabViewController
-        tabBar.savedCitiesArray.append(self.cityName!)
-        
         /*** Core Data ***/
         let savedLocation = NSEntityDescription.insertNewObject(forEntityName: "Location", into: context)
         
         savedLocation.setValue(self.cityName, forKey: "city")
+        
+        appDelegate.saveContext()
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
