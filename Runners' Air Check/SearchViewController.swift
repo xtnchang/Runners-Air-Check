@@ -76,11 +76,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         print(cityNameConcatenate ?? "")
         
-        DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
-        }
-        
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityName!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+            }
             
             guard (error == nil) else {
                 DispatchQueue.main.async {
@@ -89,6 +89,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.saveButton.isHidden = true
                     self.dogImageView.isHidden = false
                     self.messageLabel.text = "\(error!.localizedDescription)"
+                    self.activityIndicator.stopAnimating()
                 }
                 return
             }
@@ -100,6 +101,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.saveButton.isHidden = true
                     self.dogImageView.isHidden = false
                     self.messageLabel.text = "Sorry, there is currently no data for \(self.cityName!). Go for a run anyway!"
+                    self.activityIndicator.stopAnimating()
                 }
                 return
             }
@@ -181,14 +183,14 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 default:
                 print("Impossible")
             }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
         }
         
         searchBar.text = ""
         searchBar.endEditing(true)
-        
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
-        }
     }
     
     func loadUI(airQuality: Int, messageText: String) {

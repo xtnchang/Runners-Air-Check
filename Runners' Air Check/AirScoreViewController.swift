@@ -23,10 +23,7 @@ class AirScoreViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        DispatchQueue.main.async {
-            self.activityIndicator.startAnimating()
-        }
+    
         activityIndicator.hidesWhenStopped = true
         airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
@@ -43,6 +40,10 @@ class AirScoreViewController: UIViewController {
         let cityNameConcatenate = cityNameTapped?.removeWhitespace()
         
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityNameTapped!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.startAnimating()
+            }
             
             guard (error == nil) else {
                 DispatchQueue.main.async {
@@ -139,10 +140,10 @@ class AirScoreViewController: UIViewController {
             default:
                 print("Impossible")
             }
-        }
-        
-        DispatchQueue.main.async {
-            self.activityIndicator.stopAnimating()
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+            }
         }
     }
     
