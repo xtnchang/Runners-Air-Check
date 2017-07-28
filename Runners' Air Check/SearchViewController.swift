@@ -88,7 +88,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.cityLabel.isHidden = true
                     self.saveButton.isHidden = true
                     self.dogImageView.isHidden = false
-                    self.messageLabel.text = "\(error!.localizedDescription)"
+                    self.showErrorAlert(message: "\(error!.localizedDescription)")
                     self.activityIndicator.stopAnimating()
                 }
                 return
@@ -205,6 +205,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         saveButton.isHidden = false
         saveButton.layer.borderWidth = 1
         saveButton.layer.borderColor = UIColor.white.cgColor
+    }
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }

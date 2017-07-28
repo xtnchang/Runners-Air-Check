@@ -49,7 +49,7 @@ class AirScoreViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
-                    self.messageLabel.text = "\(error!.localizedDescription)"
+                    self.showErrorAlert(message: "\(error!.localizedDescription)")
                 }
                 return
             }
@@ -155,6 +155,12 @@ class AirScoreViewController: UIViewController {
         cityLabel.text = cityNameTapped
         treadmillImageView.isHidden = true
         trailImageView.isHidden = true
+    }
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 
 }
