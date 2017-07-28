@@ -60,7 +60,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kMT-e0-4gb" id="tS8-bf-2Eg">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -185,10 +185,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
                                 <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -247,15 +250,12 @@
                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="sae-JC-bRF">
                                 <rect key="frame" x="178" y="94" width="20" height="20"/>
                             </activityIndicatorView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.89659891720056573" green="0.95876733553114313" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="PJS-ZH-53f" secondAttribute="leading" id="66w-NR-8AX"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 20"/>
-                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="top" id="7nC-kD-ApC"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="top" constant="44" id="7nC-kD-ApC"/>
                             <constraint firstItem="X0q-cB-Yfc" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="8EP-GB-Db4"/>
                             <constraint firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="9oL-PZ-Djr"/>
                             <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="20" id="AJQ-hJ-XpV"/>
@@ -310,7 +310,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="-196" y="-358"/>
+            <point key="canvasLocation" x="-196" y="-314.39280359820094"/>
         </scene>
     </scenes>
     <resources>
