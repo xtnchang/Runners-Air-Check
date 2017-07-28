@@ -88,7 +88,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                     self.cityLabel.isHidden = true
                     self.saveButton.isHidden = true
                     self.dogImageView.isHidden = false
-                    self.showErrorAlert(message: "\(error!.localizedDescription)")
+                    self.messageLabel.text = "\(error!.localizedDescription)"
                     self.activityIndicator.stopAnimating()
                 }
                 return
@@ -207,12 +207,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         saveButton.layer.borderColor = UIColor.white.cgColor
     }
     
-//    func showErrorAlert(message: String) {
-//        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-//        self.present(alert, animated: true, completion: nil)
-//    }
-    
 }
 
 extension String {
@@ -223,14 +217,5 @@ extension String {
     
     func removeWhitespace() -> String {
         return self.replace(string: " ", replacement: "")
-    }
-}
-
-extension UIViewController {
-    
-    func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
     }
 }

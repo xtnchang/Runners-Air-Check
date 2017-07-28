@@ -49,7 +49,7 @@ class AirScoreViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
-                    self.showErrorAlert(message: "\(error!.localizedDescription)")
+                    self.messageLabel.text = "\(error!.localizedDescription)"
                     self.activityIndicator.stopAnimating()
                 }
                 return
