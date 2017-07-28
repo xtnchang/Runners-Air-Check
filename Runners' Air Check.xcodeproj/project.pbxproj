@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		381275D51F1D3CD500636EF2 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D31F1D3CD500636EF2 /* Location+CoreDataClass.swift */; };
 		381275D61F1D3CD500636EF2 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D41F1D3CD500636EF2 /* Location+CoreDataProperties.swift */; };
-		381275D81F1E701C00636EF2 /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D71F1E701C00636EF2 /* TabViewController.swift */; };
 		381275DA1F1EB77400636EF2 /* SavedTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275D91F1EB77400636EF2 /* SavedTableViewController.swift */; };
 		381275DC1F1EB98F00636EF2 /* AirScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381275DB1F1EB98F00636EF2 /* AirScoreViewController.swift */; };
 		38253DDA1F1834A700E7B643 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38253DD91F1834A700E7B643 /* AppDelegate.swift */; };
@@ -46,7 +45,6 @@
 /* Begin PBXFileReference section */
 		381275D31F1D3CD500636EF2 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataClass.swift"; path = "../Location+CoreDataClass.swift"; sourceTree = "<group>"; };
 		381275D41F1D3CD500636EF2 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Location+CoreDataProperties.swift"; path = "../Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		381275D71F1E701C00636EF2 /* TabViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		381275D91F1EB77400636EF2 /* SavedTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedTableViewController.swift; sourceTree = "<group>"; };
 		381275DB1F1EB98F00636EF2 /* AirScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AirScoreViewController.swift; sourceTree = "<group>"; };
 		38253DD61F1834A700E7B643 /* Runners' Air Check.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Runners' Air Check.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -176,7 +174,6 @@
 		38253E0D1F18350B00E7B643 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				381275D71F1E701C00636EF2 /* TabViewController.swift */,
 				38253E0E1F1837B200E7B643 /* SearchViewController.swift */,
 				381275D91F1EB77400636EF2 /* SavedTableViewController.swift */,
 				381275DB1F1EB98F00636EF2 /* AirScoreViewController.swift */,
@@ -340,7 +337,6 @@
 				381275D61F1D3CD500636EF2 /* Location+CoreDataProperties.swift in Sources */,
 				38253E0F1F1837B200E7B643 /* SearchViewController.swift in Sources */,
 				38253E141F183A6E00E7B643 /* AirQualClient.swift in Sources */,
-				381275D81F1E701C00636EF2 /* TabViewController.swift in Sources */,
 				38253E161F183A7C00E7B643 /* AirQualConvenience.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
