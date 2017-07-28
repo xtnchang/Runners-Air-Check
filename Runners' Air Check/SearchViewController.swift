@@ -76,11 +76,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         print(cityNameConcatenate ?? "")
         
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
+        
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityName!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
-            
-            DispatchQueue.main.async {
-                self.activityIndicator.startAnimating()
-            }
             
             guard (error == nil) else {
                 DispatchQueue.main.async {
@@ -207,11 +207,11 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         saveButton.layer.borderColor = UIColor.white.cgColor
     }
     
-    func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func showErrorAlert(message: String) {
+//        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//    }
     
 }
 
@@ -223,5 +223,14 @@ extension String {
     
     func removeWhitespace() -> String {
         return self.replace(string: " ", replacement: "")
+    }
+}
+
+extension UIViewController {
+    
+    func showErrorAlert(message: String) {
+        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

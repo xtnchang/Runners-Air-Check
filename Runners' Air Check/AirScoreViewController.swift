@@ -39,17 +39,18 @@ class AirScoreViewController: UIViewController {
         
         let cityNameConcatenate = cityNameTapped?.removeWhitespace()
         
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
+        
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityNameTapped!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
-            
-            DispatchQueue.main.async {
-                self.activityIndicator.startAnimating()
-            }
             
             guard (error == nil) else {
                 DispatchQueue.main.async {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
                     self.showErrorAlert(message: "\(error!.localizedDescription)")
+                    self.activityIndicator.stopAnimating()
                 }
                 return
             }
@@ -59,6 +60,7 @@ class AirScoreViewController: UIViewController {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
                     self.messageLabel.text = "Sorry, there is currently no data for \(self.cityNameTapped!). Go for a run anyway!"
+                    self.activityIndicator.stopAnimating()
                 }
                 return
             }
@@ -157,10 +159,10 @@ class AirScoreViewController: UIViewController {
         trailImageView.isHidden = true
     }
     
-    func showErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-    }
+//    func showErrorAlert(message: String) {
+//        let alert = UIAlertController(title: "Alert", message: message, preferredStyle: UIAlertControllerStyle.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+//        self.present(alert, animated: true, completion: nil)
+//    }
 
 }
