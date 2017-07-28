@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         
-//        activityIndicator.hidesWhenStopped = true
+        activityIndicator.hidesWhenStopped = true
         searchBar.delegate = self
         airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
@@ -97,6 +97,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
                 DispatchQueue.main.async {
                     self.airScoreCircle.isHidden = true
                     self.cityLabel.isHidden = true
+                    self.saveButton.isHidden = true
+                    self.dogImageView.isHidden = false
                     self.messageLabel.text = "Sorry, there is currently no data for \(self.cityName!). Go for a run anyway!"
                 }
                 return

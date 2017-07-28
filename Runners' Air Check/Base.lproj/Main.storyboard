@@ -184,13 +184,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Trail" translatesAutoresizingMaskIntoConstraints="NO" id="0l4-d2-lgd">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Treadmill" translatesAutoresizingMaskIntoConstraints="NO" id="D92-1h-N6c">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Dog" translatesAutoresizingMaskIntoConstraints="NO" id="X0q-cB-Yfc" userLabel="Dog Image View">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </imageView>
                             <searchBar contentMode="redraw" placeholder="Enter a city, e.g. Seattle" translatesAutoresizingMaskIntoConstraints="NO" id="PJS-ZH-53f">
@@ -201,7 +201,7 @@
                                 </connections>
                             </searchBar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aNr-eR-rDr" customClass="AirScoreView" customModule="Runners__Air_Check" customModuleProvider="target">
-                                <rect key="frame" x="36" y="99" width="70" height="70"/>
+                                <rect key="frame" x="20" y="84" width="70" height="70"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4x9-Cf-da5" userLabel="Air Score Label">
                                         <rect key="frame" x="35" y="35" width="0.0" height="0.0"/>
@@ -220,13 +220,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g3y-G3-cbU">
-                                <rect key="frame" x="127" y="99" width="248" height="70"/>
+                                <rect key="frame" x="111" y="119" width="264" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aXM-IZ-UdX">
-                                <rect key="frame" x="36" y="154" width="305" height="120"/>
+                                <rect key="frame" x="20" y="129" width="321" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="K71-of-xQY"/>
                                 </constraints>
@@ -235,7 +235,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5nX-Pq-YUs">
-                                <rect key="frame" x="88" y="537" width="200" height="37"/>
+                                <rect key="frame" x="88" y="557" width="200" height="37"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="DOg-0g-vEn"/>
                                 </constraints>
@@ -254,21 +254,21 @@
                         <color key="backgroundColor" red="0.89659891720056573" green="0.95876733553114313" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="PJS-ZH-53f" secondAttribute="leading" id="66w-NR-8AX"/>
-                            <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="36" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 30"/>
+                            <constraint firstItem="aNr-eR-rDr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="6jB-0T-i71" userLabel="Air Score View.leading = leading + 20"/>
+                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="top" id="7nC-kD-ApC"/>
                             <constraint firstItem="X0q-cB-Yfc" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="8EP-GB-Db4"/>
-                            <constraint firstItem="X0q-cB-Yfc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="8m4-iv-Caj"/>
                             <constraint firstAttribute="bottom" secondItem="X0q-cB-Yfc" secondAttribute="bottom" id="9oL-PZ-Djr"/>
-                            <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="AJQ-hJ-XpV" userLabel="Air Score Circle.top = Search Bar.bottom + 30"/>
+                            <constraint firstItem="aNr-eR-rDr" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="20" id="AJQ-hJ-XpV"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="top" secondItem="0l4-d2-lgd" secondAttribute="top" id="APn-c9-mSP" userLabel="Treadmill Image View.top = Dog Image View.top"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="centerY" secondItem="aNr-eR-rDr" secondAttribute="centerY" id="BMc-ec-5qb"/>
                             <constraint firstItem="sae-JC-bRF" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="30" id="BWG-V8-sYW"/>
-                            <constraint firstItem="5nX-Pq-YUs" firstAttribute="top" secondItem="X0q-cB-Yfc" secondAttribute="bottom" constant="-130" id="Btx-st-cOY" userLabel="Save Button.top = Dog Image View.bottom - 130"/>
+                            <constraint firstItem="5nX-Pq-YUs" firstAttribute="top" secondItem="X0q-cB-Yfc" secondAttribute="bottom" constant="-110" id="Btx-st-cOY"/>
                             <constraint firstItem="5nX-Pq-YUs" firstAttribute="centerX" secondItem="X0q-cB-Yfc" secondAttribute="centerX" id="DgS-kL-BTm"/>
                             <constraint firstItem="0l4-d2-lgd" firstAttribute="top" secondItem="X0q-cB-Yfc" secondAttribute="top" id="E3s-KQ-Zzs"/>
-                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="4x9-Cf-da5" secondAttribute="bottom" constant="20" id="Hw4-3G-j6s" userLabel="Message Label.top = Air Score Label.bottom + 20"/>
+                            <constraint firstItem="aXM-IZ-UdX" firstAttribute="top" secondItem="4x9-Cf-da5" secondAttribute="bottom" constant="10" id="Hw4-3G-j6s"/>
                             <constraint firstAttribute="trailingMargin" secondItem="aXM-IZ-UdX" secondAttribute="trailing" constant="18" id="Ih1-OR-YIY"/>
                             <constraint firstAttribute="trailing" secondItem="D92-1h-N6c" secondAttribute="trailing" id="JNs-bq-n9y"/>
-                            <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn" userLabel="City Label.leading = Air Score Circle.trailing + 30"/>
-                            <constraint firstItem="g3y-G3-cbU" firstAttribute="top" secondItem="PJS-ZH-53f" secondAttribute="bottom" constant="35" id="NKr-2M-i4N" userLabel="City Label.top = Search Bar.bottom + 30"/>
+                            <constraint firstItem="g3y-G3-cbU" firstAttribute="leading" secondItem="aNr-eR-rDr" secondAttribute="trailing" constant="21" id="MH3-Y8-yAn"/>
                             <constraint firstItem="D92-1h-N6c" firstAttribute="leading" secondItem="0l4-d2-lgd" secondAttribute="leading" id="Q4h-xj-UjX"/>
                             <constraint firstItem="PJS-ZH-53f" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vfg-x9-vRH"/>
                             <constraint firstItem="X0q-cB-Yfc" firstAttribute="trailing" secondItem="0l4-d2-lgd" secondAttribute="trailing" id="dVV-vi-zzy"/>
