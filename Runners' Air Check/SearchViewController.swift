@@ -33,7 +33,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         // Do any additional setup after loading the view.
         
-        activityIndicator.hidesWhenStopped = true
+//        activityIndicator.hidesWhenStopped = true
         searchBar.delegate = self
         airScoreCircle.isHidden = true
         cityLabel.numberOfLines = 0 // Allows multi-line
@@ -70,13 +70,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         print(searchBar.text ?? "")
         
-        self.cityName = searchBar.text
+        cityName = searchBar.text
         
         let cityNameConcatenate = searchBar.text?.removeWhitespace()
         
         print(cityNameConcatenate ?? "")
         
-        activityIndicator.startAnimating()
+        DispatchQueue.main.async {
+            self.activityIndicator.startAnimating()
+        }
         
         AirQualClient.sharedInstance.getCityAirQuality(inputString: self.cityName!, inputStringConcatenate: cityNameConcatenate!) { (airQuality, error) in
             
@@ -181,7 +183,10 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         
         searchBar.text = ""
         searchBar.endEditing(true)
-        activityIndicator.stopAnimating()
+        
+        DispatchQueue.main.async {
+            self.activityIndicator.stopAnimating()
+        }
     }
     
     func loadUI(airQuality: Int, messageText: String) {
@@ -189,7 +194,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate {
         airScoreLabel.text = String(describing: airQuality)
         messageLabel.text = messageText
         cityLabel.isHidden = false
-        cityLabel.text = self.cityName
+        cityLabel.text = cityName
         dogImageView.isHidden = true
         treadmillImageView.isHidden = true
         trailImageView.isHidden = true
