@@ -54,9 +54,35 @@ extension AirQualClient {
                 return
             }
             
-            guard let aqiString = dictionary[AirQualResponseKeys.AirQualityIndex] as? String else {
+            var aqiString = ""
+            
+            guard let aqiString_0 = dictionary[AirQualResponseKeys.AirQualityIndex] as? String else {
                 sendError(error: "The 'aqi' key cannot be found.")
                 return
+            }
+            
+            aqiString = aqiString_0
+            
+            // In some cases, the first aqi value in the array of dictionaries is "".
+            if aqiString == "" && data.count > 1 {
+                
+                var i = 1
+                
+                while aqiString == "" {
+                    
+                    guard let dictionary = data[i] as? [String:AnyObject] else {
+                        sendError(error: "The dictionary cannot be found.")
+                        return
+                    }
+                    guard let aqiString_1 = dictionary[AirQualResponseKeys.AirQualityIndex] as? String else {
+                        sendError(error: "The 'aqi' key cannot be found.")
+                        return
+                    }
+                    
+                    i += 1
+                    
+                    aqiString = aqiString_1
+                }
             }
             
             let airQuality = Int(aqiString)
